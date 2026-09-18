@@ -28,6 +28,8 @@ export default function DashboardPage() {
         <p className="dashboard__subtitle">Here's what's on your desk today.</p>
       </div>
 
+      <RemindersCard />
+
       <div className="dashboard__kpi-row">
         <KpiCard icon={CalendarDays} label="Leave balance" value="14.5" unit="days" tone="brand" />
         <KpiCard icon={FileText} label="Latest payslip" value="Aug 2026" tone="neutral" footnote="Ready to download" />
@@ -48,7 +50,6 @@ export default function DashboardPage() {
         </div>
         <div className="dashboard__col dashboard__col--side">
           <LeaveBalanceCard />
-          <RemindersCard />
           <AnnouncementsCard />
         </div>
       </div>

@@ -3,6 +3,13 @@
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: var(--space-5);
+  margin-bottom: 20px;
+}
+
+@media(max-width: 600px) {
+  .reminders-card {
+    margin-bottom: 15px;
+  }
 }
 
 .reminders-card__title {

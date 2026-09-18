@@ -70,6 +70,30 @@
   text-align: right;
   font-variant-numeric: tabular-nums;
   color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.payslip-table__amount-value {
+  display: inline-block;
+  min-width: 60px;
+}
+
+.payslip-table__reveal {
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: var(--space-2);
+  padding: 2px;
+  border-radius: var(--radius-sm);
+  transition: color 0.12s ease, background 0.12s ease;
+}
+
+.payslip-table__reveal:hover {
+  color: var(--teal-700);
+  background: var(--bg-brand-subtle);
 }
 
 .payslip-table__status {

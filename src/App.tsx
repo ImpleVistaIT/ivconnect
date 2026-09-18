@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { FileText, FileEdit } from "lucide-react";
+import { FileEdit } from "lucide-react";
 import Sidebar from "./components/Sidebar";
 import Topbar from "./components/Topbar";
 import DashboardPage from "./pages/DashboardPage";
 import LeavePage from "./pages/LeavePage";
 import ProfilePage from "./pages/ProfilePage";
+import PayslipsPage from "./pages/PayslipsPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import "./App.css";
 
@@ -19,16 +20,7 @@ export default function App() {
             <Route path="/" element={<DashboardPage />} />
             <Route path="/profile" element={<ProfilePage />} />
             <Route path="/leave" element={<LeavePage />} />
-            <Route
-              path="/payslips"
-              element={
-                <PlaceholderPage
-                  icon={FileText}
-                  title="Payslips"
-                  description="The full payslip list and download history lives here — the dashboard already shows your most recent payslips."
-                />
-              }
-            />
+            <Route path="/payslips" element={<PayslipsPage />} />
             <Route
               path="/resume"
               element={

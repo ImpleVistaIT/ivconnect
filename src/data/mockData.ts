@@ -22,12 +22,92 @@ export const leaveBalance = {
   ],
 };
 
-export const payslips = [
-  { period: "August 2026", netPay: "68,400", status: "Available" },
-  { period: "July 2026", netPay: "68,400", status: "Available" },
-  { period: "June 2026", netPay: "67,900", status: "Available" },
-  { period: "May 2026", netPay: "67,900", status: "Available" },
+export interface PayslipRecord {
+  period: string;
+  payDate: string;
+  status: "Available" | "Processing";
+  workingDays: number;
+  lopDays: number;
+  earnings: {
+    basic: number;
+    hra: number;
+    specialAllowance: number;
+    bonus: number;
+  };
+  deductions: {
+    providentFund: number;
+    professionalTax: number;
+    incomeTax: number;
+  };
+}
+
+export const payslipRecords: PayslipRecord[] = [
+  {
+    period: "August 2026",
+    payDate: "2026-08-31",
+    status: "Available",
+    workingDays: 21,
+    lopDays: 0,
+    earnings: { basic: 42000, hra: 16800, specialAllowance: 12200, bonus: 0 },
+    deductions: { providentFund: 5040, professionalTax: 200, incomeTax: 3360 },
+  },
+  {
+    period: "July 2026",
+    payDate: "2026-07-31",
+    status: "Available",
+    workingDays: 23,
+    lopDays: 0,
+    earnings: { basic: 42000, hra: 16800, specialAllowance: 12200, bonus: 0 },
+    deductions: { providentFund: 5040, professionalTax: 200, incomeTax: 3360 },
+  },
+  {
+    period: "June 2026",
+    payDate: "2026-06-30",
+    status: "Available",
+    workingDays: 20,
+    lopDays: 1,
+    earnings: { basic: 42000, hra: 16800, specialAllowance: 11700, bonus: 0 },
+    deductions: { providentFund: 5040, professionalTax: 200, incomeTax: 3260 },
+  },
+  {
+    period: "May 2026",
+    payDate: "2026-05-31",
+    status: "Available",
+    workingDays: 21,
+    lopDays: 0,
+    earnings: { basic: 41000, hra: 16400, specialAllowance: 11500, bonus: 5000 },
+    deductions: { providentFund: 4920, professionalTax: 200, incomeTax: 3540 },
+  },
 ];
+
+function grossPay(row: PayslipRecord) {
+  const { basic, hra, specialAllowance, bonus } = row.earnings;
+  return basic + hra + specialAllowance + bonus;
+}
+
+function totalDeductions(row: PayslipRecord) {
+  const { providentFund, professionalTax, incomeTax } = row.deductions;
+  return providentFund + professionalTax + incomeTax;
+}
+
+export function getNetPay(row: PayslipRecord) {
+  return grossPay(row) - totalDeductions(row);
+}
+
+export function getGrossPay(row: PayslipRecord) {
+  return grossPay(row);
+}
+
+export function getTotalDeductions(row: PayslipRecord) {
+  return totalDeductions(row);
+}
+
+export const payslips = payslipRecords.map((row) => ({
+  period: row.period,
+  netPay: getNetPay(row).toLocaleString("en-IN"),
+  status: row.status,
+}));
+
 
 export const resumeStatus = {
   lastUpdated: "2026-08-03",
