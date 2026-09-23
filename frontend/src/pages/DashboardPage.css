@@ -1,62 +1,85 @@
-.dashboard {
-  flex: 1;
-  padding: var(--space-6);
-  max-width: 1200px;
-  width: 100%;
-  margin: 0 auto;
-  overflow-y: auto;
+/* Layout comes from the shared Nova component classes (src/styles/nova.css).
+   These overrides only shrink type scale on the Dashboard specifically —
+   other Nova-styled pages (Team, Employees, Payroll, Leads, Admin) keep the
+   original sizes since only the dashboard was flagged as too large. */
+.dashboard-page.grid,
+.dashboard-page .grid {
+  gap: 10px;
 }
 
-.dashboard__intro {
-  margin-bottom: var(--space-6);
+.dashboard-page .hdr h1 {
+  font-size: 19px;
 }
 
-.dashboard__greeting {
+.dashboard-page .hdr .sub {
+  font-size: 12px;
+}
+
+.dashboard-page .k {
+  padding: 14px 14px 16px;
+}
+
+.dashboard-page .kh {
+  margin-bottom: 10px;
+}
+
+.dashboard-page .kh h3 {
+  font-size: 13px;
+}
+
+.dashboard-page .kpi .lb {
+  font-size: 11px;
+}
+
+.dashboard-page .kpi .v {
   font-size: 22px;
-  font-weight: 700;
-  letter-spacing: -0.01em;
+  margin: 8px 0 4px;
 }
 
-.dashboard__subtitle {
-  font-size: 13.5px;
-  color: var(--text-secondary);
-  margin-top: 4px;
+.dashboard-page .kpi .v small {
+  font-size: 11px;
 }
 
-.dashboard__kpi-row {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: var(--space-4);
-  margin-bottom: var(--space-6);
+.dashboard-page .kpi .ft {
+  font-size: 11px;
 }
 
-.dashboard__grid {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr;
-  gap: var(--space-4);
-  align-items: start;
+.dashboard-page .dl {
+  font-size: 10.5px;
 }
 
-.dashboard__col {
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
+.dashboard-page .tb {
+  font-size: 12px;
 }
 
-@media (max-width: 1024px) {
-  .dashboard__kpi-row {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .dashboard__grid {
-    grid-template-columns: 1fr;
-  }
+.dashboard-page .tb th {
+  font-size: 10.5px;
 }
 
-@media (max-width: 560px) {
-  .dashboard__kpi-row {
-    grid-template-columns: 1fr;
-  }
-  .dashboard {
-    padding: var(--space-4);
-  }
+.dashboard-page .who b {
+  font-size: 12px;
+}
+
+.dashboard-page .who span {
+  font-size: 10.5px;
+}
+
+.dashboard-page .tag {
+  font-size: 10.5px;
+}
+
+.dashboard-page .legend {
+  font-size: 11px;
+}
+
+.dashboard-page .dl2 {
+  font-size: 12px;
+}
+
+.dashboard-page .ti .t {
+  font-size: 12px;
+}
+
+.dashboard-page .ti .w2 {
+  font-size: 10.5px;
 }

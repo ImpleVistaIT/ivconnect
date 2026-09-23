@@ -6,16 +6,16 @@
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: var(--space-6);
+  padding: var(--space-4);
   display: flex;
   flex-direction: column;
-  gap: var(--space-5);
+  gap: var(--space-3);
 }
 
 .apply-leave__row {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: var(--space-4);
+  gap: var(--space-3);
   align-items: end;
 }
 
@@ -26,11 +26,11 @@
 .apply-leave__field {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .apply-leave__field label {
-  font-size: 12.5px;
+  font-size: 11.5px;
   font-weight: 600;
   color: var(--text-secondary);
 }
@@ -39,10 +39,10 @@
 .apply-leave__field input[type="date"],
 .apply-leave__field textarea {
   width: 100%;
-  padding: 9px 12px;
+  padding: 7px 10px;
   border: 1px solid var(--border-default);
   border-radius: var(--radius-sm);
-  font-size: 13.5px;
+  font-size: 12.5px;
   color: var(--text-primary);
   background: var(--bg-surface);
   transition: border-color 0.12s ease, box-shadow 0.12s ease;
@@ -64,7 +64,7 @@
 
 .apply-leave__field textarea {
   resize: vertical;
-  min-height: 72px;
+  min-height: 48px;
   font-family: var(--font-body);
 }
 
@@ -97,10 +97,10 @@
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 9px 12px;
+  padding: 7px 10px;
   border: 1px dashed var(--border-default);
   border-radius: var(--radius-sm);
-  font-size: 13px;
+  font-size: 12px;
   color: var(--text-secondary);
   cursor: pointer;
   transition: border-color 0.12s ease, background 0.12s ease;
@@ -120,17 +120,17 @@
 }
 
 .apply-leave__summary-text {
-  font-size: 12.5px;
+  font-size: 11.5px;
   color: var(--text-secondary);
-  line-height: 1.6;
+  line-height: 1.5;
 }
 
 .apply-leave__confirmation {
-  padding: 12px 14px;
+  padding: 9px 12px;
   background: var(--teal-50);
   color: var(--teal-700);
   border-radius: var(--radius-md);
-  font-size: 13px;
+  font-size: 12px;
   font-weight: 500;
 }
 
@@ -143,9 +143,9 @@
   border: none;
   background: var(--teal-600);
   color: var(--text-on-brand);
-  font-size: 13.5px;
+  font-size: 12.5px;
   font-weight: 600;
-  padding: 10px 20px;
+  padding: 8px 18px;
   border-radius: var(--radius-md);
   transition: background 0.12s ease;
 }

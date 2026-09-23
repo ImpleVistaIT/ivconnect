@@ -13,6 +13,18 @@ const schema = z.object({
     .string()
     .default("true")
     .transform((v) => v.toLowerCase() === "true"),
+  // Signs and verifies login JWTs. Generate a real value with:
+  // node -e "console.log(require('crypto').randomBytes(48).toString('hex'))"
+  JWT_SECRET: z.string().min(32),
+  // How long an issued token stays valid, e.g. "8h", "15m".
+  JWT_EXPIRES_IN: z.string().min(1).default("8h"),
+  // AES-256-GCM key (32 bytes as 64 hex chars) for PAN/contact/address encryption.
+  // Generate a real value with: node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+  PII_ENCRYPTION_KEY: z.string().regex(/^[0-9a-fA-F]{64}$/, "must be 64 hex chars (32 bytes)"),
+  CORS_ORIGIN: z.string().default("http://localhost:8080"),
+  // Local folder generated payslip PDFs are written to. A cloud blob store is the
+  // real production target; local disk is correct and sufficient for this phase.
+  PAYSLIP_STORAGE_PATH: z.string().default("./generated-payslips"),
 });
 
 const parsed = schema.safeParse(process.env);

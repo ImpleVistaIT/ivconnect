@@ -1,0 +1,131 @@
+/* Ported verbatim from frontend/design-reference/IVConnect_Nova_1.html.html.
+   Every hex/gradient value below matches the reference exactly. */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@500;600;700&display=swap");
+
+:root {
+  --tealL: #a9eadc; --teal: #5fd0bc; --tealM: #2fb8a4; --tealD: #1d9187; --tealX: #12665f;
+  --purL: #d4aee8; --pur: #a552c6; --purD: #7a1e9c; --purX: #4a0d63;
+  --amber: #c98a0e; --rose: #c4324b;
+  --fs: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --fd: "Sora", "Inter", system-ui, sans-serif;
+  --r: 22px; --rs: 14px; --rx: 10px; --rp: 999px;
+
+  --C1: #2fb8a4; --C2: #a552c6; --C3: #c98a0e; --C4: #5fd0bc; --C5: #7a1e9c; --C6: #c4324b;
+}
+
+/* -- 1 Aurora : light teal wash into orchid -- */
+[data-style="aurora"] {
+  --canvas: radial-gradient(1200px 700px at 3% -8%, #c6f2e7 0%, transparent 56%),
+    radial-gradient(1100px 680px at 99% 3%, #ebd9f6 0%, transparent 56%),
+    linear-gradient(160deg, #EFFAF7 0%, #f7f1fb 100%);
+  --shell: #ffffff; --card: #ffffff; --card2: #f4fcf9; --card3: #e7f6f2;
+  --ink: #0e3430; --ink2: #456f68; --ink3: #4e7a72;
+  --line: #dff0eb; --line2: #edf8f5;
+  --rail: #11544e; --railink: #cfede5; --railink2: #8fbdb5;
+  --ok: #0e7a63; --okbg: #dff5ee; --warn: #8a5a00; --warnbg: #faf0da;
+  --bad: #a62236; --badbg: #fbe7ea; --acc: #7a1e9c; --accbg: #f4e7fb;
+  --sh: 0 1px 2px rgba(14, 84, 78, 0.05), 0 10px 28px rgba(14, 84, 78, 0.07);
+  --shl: 0 4px 12px rgba(14, 84, 78, 0.09), 0 30px 70px rgba(14, 84, 78, 0.15);
+  --aiG: linear-gradient(135deg, #12665f 0%, #1d9187 40%, #7a1e9c 100%);
+  color-scheme: light;
+}
+
+/* -- 2 Frost : near-white, minimal -- */
+[data-style="frost"] {
+  --canvas: linear-gradient(160deg, #f4f8f8 0%, #f7f5fa 100%);
+  --shell: #ffffff; --card: #ffffff; --card2: #f8fbfa; --card3: #eef5f3;
+  --ink: #13322f; --ink2: #486964; --ink3: #527771;
+  --line: #e6eeec; --line2: #f1f7f5;
+  --rail: #ffffff; --railink: #5e807a; --railink2: #8aa8a2;
+  --ok: #0e7a63; --okbg: #e1f5ef; --warn: #8a5a00; --warnbg: #faf0da;
+  --bad: #a62236; --badbg: #fbe7ea; --acc: #7a1e9c; --accbg: #f4e7fb;
+  --sh: 0 1px 2px rgba(19, 50, 47, 0.04), 0 6px 18px rgba(19, 50, 47, 0.05);
+  --shl: 0 4px 12px rgba(19, 50, 47, 0.07), 0 26px 60px rgba(19, 50, 47, 0.12);
+  --aiG: linear-gradient(135deg, #1d9187 0%, #2fb8a4 42%, #a552c6 100%);
+  color-scheme: light;
+}
+[data-style="frost"] .rail { border-right: 1px solid var(--line); }
+[data-style="frost"] .rail .mark { box-shadow: none; border: 1px solid var(--line); }
+[data-style="frost"] .rb:hover { background: var(--card3); color: var(--ink); }
+
+/* -- 3 Lagoon : teal led -- */
+[data-style="lagoon"] {
+  --canvas: radial-gradient(1300px 760px at 50% -14%, #bdefe3 0%, transparent 58%),
+    linear-gradient(165deg, #e7f7f3 0%, #eff9f6 100%);
+  --shell: #ffffff; --card: #ffffff; --card2: #f3fbf9; --card3: #e4f5f1;
+  --ink: #08322c; --ink2: #3e6b63; --ink3: #4a756c;
+  --line: #dbefea; --line2: #eaf7f4;
+  --rail: #0c4e48; --railink: #c8ebe3; --railink2: #89bab2;
+  --ok: #0e7a63; --okbg: #ddf4ed; --warn: #8a5a00; --warnbg: #faf0da;
+  --bad: #a62236; --badbg: #fbe7ea; --acc: #7a1e9c; --accbg: #f4e7fb;
+  --sh: 0 1px 2px rgba(8, 50, 44, 0.05), 0 10px 26px rgba(8, 50, 44, 0.07);
+  --shl: 0 4px 12px rgba(8, 50, 44, 0.09), 0 28px 66px rgba(8, 50, 44, 0.15);
+  --aiG: linear-gradient(135deg, #0c4e48 0%, #1d9187 55%, #5fd0bc 100%);
+  color-scheme: light;
+}
+
+/* -- 4 Orchid : purple led -- */
+[data-style="orchid"] {
+  --canvas: radial-gradient(1250px 740px at 96% -10%, #e9d4f6 0%, transparent 58%),
+    linear-gradient(165deg, #f7f1fb 0%, #f1f8f6 100%);
+  --shell: #ffffff; --card: #ffffff; --card2: #fbf7fd; --card3: #f2e9f7;
+  --ink: #241030; --ink2: #5a4568; --ink3: #655070;
+  --line: #ebe0f1; --line2: #f4edf7;
+  --rail: #4a0d63; --railink: #e0c9ee; --railink2: #ae8fbe;
+  --ok: #0e7a63; --okbg: #e1f5ef; --warn: #8a5a00; --warnbg: #faf0da;
+  --bad: #a62236; --badbg: #fbe7ea; --acc: #7a1e9c; --accbg: #f3e5fa;
+  --sh: 0 1px 2px rgba(74, 13, 99, 0.05), 0 10px 28px rgba(74, 13, 99, 0.08);
+  --shl: 0 4px 12px rgba(74, 13, 99, 0.1), 0 30px 70px rgba(74, 13, 99, 0.18);
+  --aiG: linear-gradient(135deg, #4a0d63 0%, #7a1e9c 48%, #2fb8a4 100%);
+  color-scheme: light;
+}
+
+/* -- 5 Midnight : deep teal dark -- */
+[data-style="midnight"] {
+  --canvas: radial-gradient(1200px 700px at 4% -8%, #10403b 0%, transparent 55%),
+    radial-gradient(1100px 680px at 98% 4%, #33124a 0%, transparent 55%),
+    linear-gradient(160deg, #04110f 0%, #0a0715 100%);
+  --shell: #0b1b19; --card: #102421; --card2: #152d29; --card3: #1d3b36;
+  --ink: #e9faf5; --ink2: #a8cfc7; --ink3: #8fb5ad;
+  --line: #1e3b36; --line2: #17302c;
+  --rail: #05120f; --railink: #bfe6dc; --railink2: #7aa9a1;
+  --ok: #5fe0bc; --okbg: rgba(95, 224, 188, 0.14); --warn: #eab55c; --warnbg: rgba(234, 181, 92, 0.14);
+  --bad: #ff8a9b; --badbg: rgba(255, 138, 155, 0.14); --acc: #d4aee8; --accbg: rgba(212, 174, 232, 0.16);
+  --sh: 0 1px 2px rgba(0, 0, 0, 0.4), 0 12px 32px rgba(0, 0, 0, 0.38);
+  --shl: 0 4px 14px rgba(0, 0, 0, 0.5), 0 30px 70px rgba(0, 0, 0, 0.55);
+  --aiG: linear-gradient(135deg, #0c3a35 0%, #1d9187 48%, #7a1e9c 100%);
+  color-scheme: dark;
+}
+[data-style="midnight"] .hdr .wm { background: #fff; padding: 6px 9px; }
+
+/* -- 6 Carbon : neutral dark -- */
+[data-style="carbon"] {
+  --canvas: linear-gradient(160deg, #101214 0%, #15131a 100%);
+  --shell: #191c1f; --card: #1f2327; --card2: #252a2e; --card3: #2e343a;
+  --ink: #f0f4f5; --ink2: #b4c0c4; --ink3: #9aa7ad;
+  --line: #2e3438; --line2: #262b2f;
+  --rail: #0e1012; --railink: #c6d2d5; --railink2: #87949a;
+  --ok: #5fe0bc; --okbg: rgba(95, 224, 188, 0.14); --warn: #eab55c; --warnbg: rgba(234, 181, 92, 0.14);
+  --bad: #ff8a9b; --badbg: rgba(255, 138, 155, 0.14); --acc: #d4aee8; --accbg: rgba(212, 174, 232, 0.16);
+  --sh: 0 1px 2px rgba(0, 0, 0, 0.45), 0 12px 30px rgba(0, 0, 0, 0.4);
+  --shl: 0 4px 14px rgba(0, 0, 0, 0.5), 0 28px 64px rgba(0, 0, 0, 0.55);
+  --aiG: linear-gradient(135deg, #17322f 0%, #2fb8a4 46%, #a552c6 100%);
+  color-scheme: dark;
+}
+[data-style="carbon"] .hdr .wm { background: #fff; padding: 6px 9px; }
+
+/* Default theme so the app renders even before the saved preference loads. */
+:root:not([data-style]) {
+  --canvas: radial-gradient(1200px 700px at 3% -8%, #c6f2e7 0%, transparent 56%),
+    radial-gradient(1100px 680px at 99% 3%, #ebd9f6 0%, transparent 56%),
+    linear-gradient(160deg, #EFFAF7 0%, #f7f1fb 100%);
+  --shell: #ffffff; --card: #ffffff; --card2: #f4fcf9; --card3: #e7f6f2;
+  --ink: #0e3430; --ink2: #456f68; --ink3: #4e7a72;
+  --line: #dff0eb; --line2: #edf8f5;
+  --rail: #11544e; --railink: #cfede5; --railink2: #8fbdb5;
+  --ok: #0e7a63; --okbg: #dff5ee; --warn: #8a5a00; --warnbg: #faf0da;
+  --bad: #a62236; --badbg: #fbe7ea; --acc: #7a1e9c; --accbg: #f4e7fb;
+  --sh: 0 1px 2px rgba(14, 84, 78, 0.05), 0 10px 28px rgba(14, 84, 78, 0.07);
+  --shl: 0 4px 12px rgba(14, 84, 78, 0.09), 0 30px 70px rgba(14, 84, 78, 0.15);
+  --aiG: linear-gradient(135deg, #12665f 0%, #1d9187 40%, #7a1e9c 100%);
+}

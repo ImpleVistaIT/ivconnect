@@ -1,0 +1,115 @@
+.searchbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.searchbox__field {
+  position: relative;
+  min-width: 0;
+}
+
+.searchbox__field input {
+  width: 0;
+  opacity: 0;
+  height: 38px;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--rp);
+  background: var(--card);
+  color: var(--ink);
+  font-size: 13px;
+  pointer-events: none;
+  transition: width 0.16s ease, opacity 0.12s ease, padding 0.16s ease, border-color 0.16s ease;
+}
+
+.searchbox--open {
+  gap: 8px;
+}
+
+.searchbox--open .searchbox__field {
+  flex: 1;
+  min-width: 0;
+}
+
+.searchbox--open .searchbox__field input {
+  width: 100%;
+  max-width: 320px;
+  opacity: 1;
+  padding: 0 14px;
+  border-color: var(--line);
+  pointer-events: auto;
+}
+
+.searchbox__field input:focus {
+  outline: none;
+  border-color: var(--teal);
+}
+
+.searchbox__field input::placeholder {
+  color: var(--ink3);
+}
+
+.searchbox__results,
+.searchbox__empty {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  right: 0;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--rx);
+  box-shadow: var(--shl);
+  z-index: 25;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.searchbox__results {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+}
+
+.searchbox__result {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 9px 10px;
+  border-radius: var(--rx);
+  font-size: 13.5px;
+  color: var(--ink2);
+  text-align: left;
+}
+
+.searchbox__result:hover,
+.searchbox__result--active {
+  background: var(--card3);
+  color: var(--ink);
+}
+
+.searchbox__empty {
+  padding: 12px 14px;
+  font-size: 12.5px;
+  color: var(--ink3);
+}
+
+@media (max-width: 640px) {
+  .searchbox--open .searchbox__field input {
+    max-width: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .searchbox--open {
+    position: fixed;
+    inset: 64px 8px auto 8px;
+    background: var(--card);
+    padding: 8px;
+    border-radius: var(--rx);
+    box-shadow: var(--shl);
+    z-index: 24;
+  }
+}

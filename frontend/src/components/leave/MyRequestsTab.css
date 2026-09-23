@@ -2,7 +2,7 @@
   background: var(--bg-surface);
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
-  padding: var(--space-5);
+  padding: var(--space-3) var(--space-4);
   overflow-x: auto;
 }
 
@@ -14,18 +14,18 @@
 
 .requests-table thead th {
   text-align: left;
-  font-size: 11.5px;
+  font-size: 10.5px;
   font-weight: 600;
   color: var(--text-muted);
-  padding: 0 var(--space-3) var(--space-2) 0;
+  padding: 0 var(--space-3) 6px 0;
   border-bottom: 1px solid var(--border-subtle);
   white-space: nowrap;
 }
 
 .requests-table tbody td {
-  padding: var(--space-3) var(--space-3) var(--space-3) 0;
+  padding: 7px var(--space-3) 7px 0;
   border-bottom: 1px solid var(--border-subtle);
-  font-size: 13px;
+  font-size: 12px;
   vertical-align: middle;
 }
 

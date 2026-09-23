@@ -1,76 +1,39 @@
+@import "./styles/theme-tokens.css";
+@import "./styles/nova.css";
+
 :root {
-  /* ---- Brand: teal ramp ---- */
-  --teal-50: #eefaf6;
-  --teal-100: #d3f1e6;
-  --teal-200: #a3e2c9;
-  --teal-300: #6bcdac;
-  --teal-400: #3cb491;
-  --teal-500: #1c9678;
-  --teal-600: #10785f;
-  --teal-700: #0c5f4b;
-  --teal-800: #0a4c3d;
-  --teal-900: #073329;
+  /* Semantic aliases resolved against the active Nova theme (see styles/theme-tokens.css).
+     Existing page components keep using these names; only their values changed. */
+  --bg-canvas: var(--canvas, #f7f9f8);
+  --bg-surface: var(--card, #ffffff);
+  --bg-sunken: var(--card3, #eef2f1);
+  --bg-brand-subtle: var(--okbg, #e1f5ef);
+  --bg-brand-selected: var(--card3, #eef2f1);
 
-  /* ---- Neutrals: cool, slightly teal-leaning greys ---- */
-  --grey-0: #ffffff;
-  --grey-25: #f9fbfa;
-  --grey-50: #f2f5f4;
-  --grey-100: #e6ebe9;
-  --grey-200: #d3dbd8;
-  --grey-300: #b3c0bb;
-  --grey-400: #8b9993;
-  --grey-500: #6b7973;
-  --grey-600: #505d58;
-  --grey-700: #3b4642;
-  --grey-800: #26302c;
-  --grey-900: #151d1a;
-
-  /* ---- Semantic ---- */
-  --amber-50: #fdf3e3;
-  --amber-500: #b5790f;
-  --amber-600: #94620a;
-
-  --red-50: #fbecea;
-  --red-500: #b5382b;
-  --red-600: #942e23;
-
-  /* ---- Surfaces ---- */
-  --bg-canvas: var(--grey-25);
-  --bg-surface: var(--grey-0);
-  --bg-sunken: var(--grey-50);
-  --bg-brand-subtle: var(--teal-50);
-  --bg-brand-selected: var(--teal-100);
-
-  /* ---- Text ---- */
-  --text-primary: var(--grey-900);
-  --text-secondary: var(--grey-600);
-  --text-muted: var(--grey-400);
+  --text-primary: var(--ink, #13322f);
+  --text-secondary: var(--ink2, #486964);
+  --text-muted: var(--ink3, #6b8a83);
   --text-on-brand: #ffffff;
-  --text-brand: var(--teal-700);
+  --text-brand: var(--tealD, #1d9187);
 
-  /* ---- Borders ---- */
-  --border-subtle: var(--grey-100);
-  --border-default: var(--grey-200);
-  --border-strong: var(--grey-300);
-  --border-brand: var(--teal-300);
+  --border-subtle: var(--line, #e6eeec);
+  --border-default: var(--line, #e6eeec);
+  --border-strong: var(--ink3, #6b8a83);
+  --border-brand: var(--teal, #5fd0bc);
 
-  /* ---- Elevation ---- */
-  --shadow-xs: 0 1px 2px rgba(21, 29, 26, 0.05);
-  --shadow-sm: 0 1px 2px rgba(21, 29, 26, 0.04), 0 2px 6px rgba(21, 29, 26, 0.05);
-  --shadow-md: 0 4px 14px rgba(21, 29, 26, 0.08);
-  --shadow-focus: 0 0 0 3px var(--teal-100);
+  --shadow-xs: var(--sh, 0 1px 2px rgba(0, 0, 0, 0.05));
+  --shadow-sm: var(--sh, 0 1px 2px rgba(0, 0, 0, 0.05));
+  --shadow-md: var(--shl, 0 4px 14px rgba(0, 0, 0, 0.1));
+  --shadow-focus: 0 0 0 3px var(--okbg, rgba(95, 208, 188, 0.3));
 
-  /* ---- Radius ---- */
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
   --radius-full: 999px;
 
-  /* ---- Type ---- */
-  --font-ui: "Manrope", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-ui: "Sora", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 
-  /* ---- Spacing ---- */
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -78,6 +41,21 @@
   --space-5: 20px;
   --space-6: 24px;
   --space-8: 32px;
+
+  /* Back-compat aliases: earlier grayscale-pass components still reference these
+     names directly. Values now come from the active Nova theme, not hardcoded hex. */
+  --teal-50: var(--okbg, #e1f5ef);
+  --teal-100: var(--card3, #eef2f1);
+  --teal-300: var(--teal, #5fd0bc);
+  --teal-500: var(--tealM, #2fb8a4);
+  --teal-600: var(--tealD, #1d9187);
+  --teal-700: var(--tealX, #12665f);
+  --amber-50: var(--warnbg, #faf0da);
+  --amber-600: var(--warn, #8a5a00);
+  --red-50: var(--badbg, #fbe7ea);
+  --red-500: var(--bad, #a62236);
+  --red-600: var(--bad, #a62236);
+  --grey-300: var(--ink3, #6b8a83);
 }
 
 * {
@@ -95,6 +73,7 @@ body {
   font-family: var(--font-body);
   color: var(--text-primary);
   background: var(--bg-canvas);
+  background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   font-size: 14px;
   line-height: 1.5;
@@ -123,7 +102,7 @@ input {
 }
 
 ::selection {
-  background: var(--teal-200);
+  background: var(--teal, #5fd0bc);
 }
 
 *:focus-visible {
@@ -137,7 +116,7 @@ input {
   height: 8px;
 }
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: var(--grey-200);
+  background: var(--border-default);
   border-radius: var(--radius-full);
 }
 .scrollbar-thin::-webkit-scrollbar-track {

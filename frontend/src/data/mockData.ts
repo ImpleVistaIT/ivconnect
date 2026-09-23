@@ -169,7 +169,7 @@ export const reminders = [
   {
     id: 1,
     icon: "file-text" as const,
-    text: "Your resume is due for its monthly update by 25 Sep.",
+    text: "Your skills profile is due for its monthly update by 25 Sep.",
     tone: "warning" as const,
   },
   {
