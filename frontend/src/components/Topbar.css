@@ -68,6 +68,11 @@
   color: var(--text-primary);
 }
 
+.topbar__user-title {
+  font-size: 11.5px;
+  color: var(--text-muted);
+}
+
 .topbar__chevron {
   transition: transform 0.15s ease;
   color: var(--text-muted);

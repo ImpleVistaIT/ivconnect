@@ -42,6 +42,11 @@ export default function Topbar() {
             <span className="topbar__user-text">
               <span className="topbar__user-greeting">Welcome,</span>
               <span className="topbar__user-name">{user?.employee?.fullName ?? user?.userName}</span>
+              {user?.employee && (
+                <span className="topbar__user-title">
+                  {user.employee.employeeCode} · {user.employee.designation}
+                </span>
+              )}
             </span>
             <ChevronDown
               size={16}
